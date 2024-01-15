@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:webview_flutter/webview_flutter.dart';
+import 'package:flutter/cupertino.dart';
 
 void main() {
   runApp(const MyApp());
@@ -10,12 +11,9 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return CupertinoApp(
       debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
-      theme: ThemeData(
-        useMaterial3: true,
-      ),
       home: const MyHomePage(),
     );
   }
@@ -44,11 +42,10 @@ class MyHomePage extends StatelessWidget {
         body: SafeArea(
           child: SizedBox.expand(
             child: Container(
-                decoration:
-                    const BoxDecoration(color: Color.fromARGB(255, 9, 51, 68)),
-                child: WebViewWidget(
-                  controller: controller,
-                )),
+              decoration:
+                  const BoxDecoration(color: Color.fromARGB(255, 9, 51, 68)),
+              child: WebViewWidget(controller: controller),
+            ),
           ),
         ));
   }
